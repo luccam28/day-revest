@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Cookies | Day Revest</title>
+  <meta name="description" content="Política de Cookies da Day Revest — saiba como utilizamos cookies em nosso site.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Day Revest - Início">
+        <img src="logo2.png" alt="Day Revest" class="logo-img" width="60" height="60">
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html" class="menu-link">Voltar ao site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-block: 4rem;">
+    <h1 style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-navy); margin-bottom: 1.5rem;">Política de Cookies</h1>
+    <p>Utilizamos cookies para melhorar a navegação e analisar o tráfego do site.</p>
+    <h2 style="font-size: var(--text-xl); color: var(--color-navy); margin: 2rem 0 1rem;">O que são cookies?</h2>
+    <p>Cookies são pequenos arquivos armazenados no seu navegador que nos ajudam a lembrar suas preferências.</p>
+    <h2 style="font-size: var(--text-xl); color: var(--color-navy); margin: 2rem 0 1rem;">Tipos de cookies</h2>
+    <p>Cookies essenciais para funcionamento, cookies de análise (Google Analytics) e cookies de terceiros (fontes, mapas).</p>
+    <h2 style="font-size: var(--text-xl); color: var(--color-navy); margin: 2rem 0 1rem;">Como controlar</h2>
+    <p>Você pode desativar os cookies nas configurações do seu navegador, mas isso pode afetar a experiência no site.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; <span data-year></span> Day Revest LTDA. Todos os direitos reservados.</p>
+      <p class="footer-credits">DESENVOLVIDO POR <a href="https://www.redesigner.com.br" target="_blank" rel="noopener noreferrer">REDESIGNER PPM</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearSpan = document.querySelector('[data-year]');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
