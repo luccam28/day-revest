@@ -63,16 +63,20 @@
   </script>
 </head>
 <body>
+  <!-- Link para pular o menu e ir direto ao conteúdo (acessibilidade) -->
   <a class="skip-link" href="#main">Pular para o conteúdo principal</a>
 
-  <!-- Header -->
+  <!-- ===================== HEADER / NAVEGAÇÃO ===================== -->
   <header class="site-header" data-header>
     <div class="container header-inner">
+      <!-- Logo -->
       <a href="index.html" class="logo" aria-label="Day Revest - Início">
         <img src="logo2.png" alt="Day Revest" class="logo-img" width="60" height="60" decoding="async">
       </a>
 
+      <!-- Menu principal -->
       <nav class="main-nav" aria-label="Navegação principal">
+        <!-- Botão hamburguer para mobile -->
         <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" data-menu-toggle>
           <span class="sr-only">Abrir menu</span>
           <span class="hamburger" aria-hidden="true"></span>
@@ -87,6 +91,7 @@
         </ul>
       </nav>
 
+      <!-- CTA do header -->
       <a href="https://wa.me/5511967967330?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20reforma%20do%20meu%20ambiente!" class="btn btn--primary header-cta" target="_blank" rel="noopener noreferrer" data-cta="header">
         Orçamento
       </a>
@@ -95,15 +100,18 @@
 
   <main id="main">
 
-    <!-- Hero -->
+    <!-- ===================== HERO ===================== -->
     <section class="hero" aria-labelledby="hero-heading">
+      <!-- Fundo decorativo de blueprint -->
       <div class="hero-blueprint" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="eyebrow">Obras residenciais e comerciais em São Paulo</p>
+          <!-- Título principal -->
           <h1 id="hero-heading" class="hero-title">Sua reforma,<br>do jeito certo.</h1>
+          <!-- Subtítulo reforçando a proposta de obra completa -->
           <p class="hero-subtitle">
-            A Day Revest cuida da sua reforma do início ao acabamento — com equipe própria, prazo combinado e garantia no serviço. Se algo não ficar bom, a gente resolve.
+            Da primeira etapa ao acabamento: a Day Revest executa obras e reformas completas, com equipes próprias especializadas em alvenaria, instalações, pisos, revestimentos e acabamentos. Tudo com prazo combinado e garantia no serviço.
           </p>
           <div class="hero-actions">
             <a href="https://wa.me/5511967967330?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20reforma%20do%20meu%20ambiente!" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" data-cta="hero-primary">
@@ -114,6 +122,7 @@
           <p class="hero-note">Atendimento residencial e comercial • Agendamento via WhatsApp</p>
         </div>
 
+        <!-- Ilustração técnica de planta baixa -->
         <div class="hero-visual" aria-hidden="true">
           <svg class="blueprint-svg" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
             <g class="bp-grid">
@@ -143,7 +152,21 @@
       </div>
     </section>
 
-    <!-- Diferenciais rápidos -->
+    <!-- ===================== O QUE ESTÁ INCLUSO ===================== -->
+    <section class="scope" aria-label="O que está incluso">
+      <div class="container">
+        <p class="eyebrow">O que está incluso</p>
+        <h2 class="section-title">Uma equipe, todas as etapas.</h2>
+        <ul class="scope-list">
+          <li><span class="scope-icon" aria-hidden="true">🧱</span><span>Alvenaria e estrutura</span></li>
+          <li><span class="scope-icon" aria-hidden="true">🔧</span><span>Instalações elétricas e hidráulicas</span></li>
+          <li><span class="scope-icon" aria-hidden="true">🧰</span><span>Pisos e revestimentos</span></li>
+          <li><span class="scope-icon" aria-hidden="true">🎨</span><span>Pintura e acabamentos</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== DIFERENCIAIS RÁPIDOS ===================== -->
     <section class="quick-diffs" aria-label="Diferenciais">
       <div class="container quick-diffs-grid">
         <div class="diff-item">
@@ -165,38 +188,27 @@
       </div>
     </section>
 
-    <!-- Problema -->
+    <!-- ===================== PROBLEMA / DOR ===================== -->
     <section class="problem" aria-labelledby="problem-heading">
       <div class="container problem-inner">
         <p class="eyebrow">Antes de fechar qualquer obra</p>
         <h2 id="problem-heading" class="section-title">Reformar dá medo — e não é só por causa do preço.</h2>
         <div class="problem-grid">
-          <div class="problem-item">
-            <span class="problem-mark" aria-hidden="true">01</span>
-            <p>A obra que era para durar 2 semanas some por 2 meses.</p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-mark" aria-hidden="true">02</span>
-            <p>Depois que o pagamento é feito, ninguém responde mais.</p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-mark" aria-hidden="true">03</span>
-            <p>A equipe muda no meio da obra e a qualidade cai junto.</p>
-          </div>
-          <div class="problem-item">
-            <span class="problem-mark" aria-hidden="true">04</span>
-            <p>Termina e, se algo dá errado, ninguém aparece para resolver.</p>
-          </div>
+          <div class="problem-item"><span class="problem-mark" aria-hidden="true">01</span><p>A obra que era para durar 2 semanas some por 2 meses.</p></div>
+          <div class="problem-item"><span class="problem-mark" aria-hidden="true">02</span><p>Depois que o pagamento é feito, ninguém responde mais.</p></div>
+          <div class="problem-item"><span class="problem-mark" aria-hidden="true">03</span><p>A equipe muda no meio da obra e a qualidade cai junto.</p></div>
+          <div class="problem-item"><span class="problem-mark" aria-hidden="true">04</span><p>Termina e, se algo dá errado, ninguém aparece para resolver.</p></div>
         </div>
         <p class="problem-bridge">É exatamente isso que a Day Revest resolve — com equipe própria, prazo combinado e garantia no serviço.</p>
       </div>
     </section>
 
-    <!-- Serviços -->
+    <!-- ===================== SERVIÇOS ===================== -->
     <section id="servicos" class="services" aria-labelledby="services-heading">
       <div class="container">
         <p class="eyebrow">O que fazemos</p>
         <h2 id="services-heading" class="section-title">Obras em geral, da visita técnica ao acabamento.</h2>
+        <p class="section-subtitle" style="margin-bottom: var(--space-5);">Não importa o tamanho da reforma: nossa equipe própria executa cada etapa, sem repassar para terceiros. Você tem um único responsável do início ao fim.</p>
         <div class="services-grid">
           <div class="service-card">
             <span class="service-index" aria-hidden="true">A</span>
@@ -218,7 +230,7 @@
       </div>
     </section>
 
-    <!-- Como Funciona -->
+    <!-- ===================== COMO FUNCIONA / PROCESSO ===================== -->
     <section id="processo" class="process" aria-labelledby="process-heading">
       <div class="container">
         <p class="eyebrow">Como funciona</p>
@@ -242,7 +254,7 @@
             <span class="process-num">03</span>
             <div>
               <h3>Execução com equipe própria</h3>
-              <p>A obra é feita pela nossa própria equipe, com prazo combinado antes de começar.</p>
+              <p>Nossas equipes próprias conduzem cada fase da obra — alvenaria, instalações, pisos, revestimentos e acabamentos — com prazo combinado antes de começar.</p>
             </div>
           </li>
           <li class="process-step" data-animate>
@@ -256,15 +268,15 @@
       </div>
     </section>
 
-    <!-- Diferenciais detalhados -->
+    <!-- ===================== DIFERENCIAIS DETALHADOS ===================== -->
     <section class="diffs-detail" aria-labelledby="diffs-heading">
       <div class="container">
         <p class="eyebrow eyebrow--light">Por que Day Revest</p>
         <h2 id="diffs-heading" class="section-title section-title--light">O que muda quando a obra é com a gente.</h2>
         <div class="diffs-grid">
           <div class="diff-card">
-            <h3>Equipe própria</h3>
-            <p>Sem terceirizados: quem faz a obra é quem responde por ela do início ao fim.</p>
+            <h3>Obra completa com equipe própria</h3>
+            <p>Da alvenaria ao acabamento, nossas equipes próprias executam cada fase — sem terceirizações, sem perder o padrão.</p>
           </div>
           <div class="diff-card">
             <h3>Garantia no serviço</h3>
@@ -282,7 +294,7 @@
       </div>
     </section>
 
-        <!-- Portfólio -->
+    <!-- ===================== PORTFÓLIO ===================== -->
     <section id="portfolio" class="portfolio" aria-labelledby="portfolio-heading">
       <div class="container">
         <p class="eyebrow">Portfólio</p>
@@ -379,7 +391,7 @@
       </div>
     </section>
 
-    <!-- Sobre -->
+    <!-- ===================== SOBRE ===================== -->
     <section id="sobre" class="about" aria-labelledby="about-heading">
       <div class="container about-grid">
         <div>
@@ -397,7 +409,7 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ===================== FAQ ===================== -->
     <section id="faq" class="faq" aria-labelledby="faq-heading">
       <div class="container">
         <p class="eyebrow">Perguntas frequentes</p>
@@ -431,7 +443,7 @@
       </div>
     </section>
 
-    <!-- Contato -->
+    <!-- ===================== CONTATO ===================== -->
     <section id="contato" class="contact" aria-labelledby="contact-heading">
       <div class="container">
         <p class="eyebrow">Contato</p>
@@ -486,7 +498,7 @@
       </div>
     </section>
 
-    <!-- CTA final -->
+    <!-- ===================== CTA FINAL ===================== -->
     <section class="final-cta" aria-labelledby="final-cta-heading">
       <div class="hero-blueprint hero-blueprint--dark" aria-hidden="true"></div>
       <div class="container final-cta-content">
@@ -499,6 +511,7 @@
     </section>
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer" aria-label="Rodapé">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -534,12 +547,12 @@
     </div>
   </footer>
 
-  <!-- Botão flutuante WhatsApp -->
+  <!-- ===================== BOTÃO FLUTUANTE WHATSAPP ===================== -->
   <a href="https://wa.me/5511967967330?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento!" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-cta="float-whatsapp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-  <!-- Modal LGPD -->
+  <!-- ===================== MODAL LGPD ===================== -->
   <div class="lgpd-modal" id="lgpdModal" role="dialog" aria-modal="true" aria-labelledby="lgpdTitle" hidden>
     <div class="lgpd-backdrop" data-lgpd-close></div>
     <div class="lgpd-dialog">
@@ -553,7 +566,7 @@
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- ===================== JAVASCRIPT ===================== -->
   <script src="script.js" defer></script>
 </body>
 </html>

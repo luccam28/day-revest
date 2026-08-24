@@ -359,7 +359,63 @@ body {
 .bp-node { fill: var(--color-brick); }
 
 /* ==========================================================================
-   8. QUICK DIFFS
+   8. SCOPE — O QUE ESTÁ INCLUSO (aprimorado)
+   ========================================================================== */
+.scope {
+  padding-block: var(--space-9);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.scope-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.scope-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-concrete);
+  padding: var(--space-3) var(--space-5);
+  border-radius: 999px;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-navy);
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.scope-list li:hover {
+  background: var(--color-concrete-2);
+  border-color: var(--color-line);
+  transform: translateY(-2px);
+}
+
+.scope-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+@media (max-width: 599px) {
+  .scope-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .scope-list li {
+    justify-content: center;
+    padding: var(--space-4) var(--space-5);
+  }
+}
+
+/* ==========================================================================
+   9. QUICK DIFFS
    ========================================================================== */
 .quick-diffs { border-block: 1px solid var(--color-line); background: var(--color-white); }
 .quick-diffs-grid {
@@ -379,7 +435,7 @@ body {
 .diff-icon { width: 26px; height: 26px; color: var(--color-brick); flex-shrink: 0; }
 
 /* ==========================================================================
-   9. PROBLEM
+   10. PROBLEM
    ========================================================================== */
 .problem { padding-block: var(--space-9); }
 .problem-inner { max-width: 900px; }
@@ -413,7 +469,7 @@ body {
 }
 
 /* ==========================================================================
-   10. SERVICES
+   11. SERVICES
    ========================================================================== */
 .services { padding-block: var(--space-9); background: var(--color-concrete); }
 .services-grid {
@@ -456,7 +512,7 @@ body {
 .service-link:hover { text-decoration: underline; }
 
 /* ==========================================================================
-   11. PROCESS
+   12. PROCESS
    ========================================================================== */
 .process { padding-block: var(--space-9); }
 .process-list { display: flex; flex-direction: column; }
@@ -489,7 +545,7 @@ body {
 .process-step p { color: var(--color-steel); max-width: 50ch; }
 
 /* ==========================================================================
-   12. DIFFS DETAIL (dark section)
+   13. DIFFS DETAIL (dark section)
    ========================================================================== */
 .diffs-detail {
   position: relative;
@@ -517,7 +573,7 @@ body {
 .diff-card p { color: rgba(255,255,255,0.65); font-size: var(--text-sm); }
 
 /* ==========================================================================
-   13. PORTFOLIO / INSTAGRAM (ACORDEÃO DINÂMICO)
+   14. PORTFOLIO / INSTAGRAM (ACORDEÃO DINÂMICO)
    ========================================================================== */
 .portfolio { padding-block: var(--space-9); }
 
@@ -528,7 +584,6 @@ body {
   margin-bottom: var(--space-2);
 }
 
-/* 1. Grid Principal: Máximo de 2 colunas para as fotos respirarem */
 @media (min-width: 600px) {
   .ig-grid { 
     grid-template-columns: repeat(2, 1fr); 
@@ -541,7 +596,6 @@ body {
   }
 }
 
-/* Card padrão */
 .ig-card {
   position: relative;
   background: var(--color-white);
@@ -556,7 +610,6 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-/* Imagem única (caso haja cards simples) */
 .ig-card > img {
   width: 100%;
   height: 100%;
@@ -565,9 +618,6 @@ body {
   aspect-ratio: 1 / 1;
 }
 
-/* ==========================================================================
-   13.1 CARDS DE CASO (antes/durante/depois)
-   ========================================================================== */
 .ig-card--case {
   display: flex;
   flex-direction: column;
@@ -581,7 +631,6 @@ body {
   margin: 0;
 }
 
-/* 2. O container das Fases: Proporção cinematográfica e layout flexível */
 .ig-case-phases {
   display: flex;
   gap: 2px;
@@ -590,7 +639,6 @@ body {
   overflow: hidden;
 }
 
-/* 3. Efeito Acordeão: As fotos dividem o espaço e reagem ao mouse */
 .ig-phase {
   position: relative;
   flex: 1; 
@@ -599,12 +647,10 @@ body {
   transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Quando passa o mouse no container, as imagens encolhem um pouco... */
 @media (hover: hover) {
   .ig-case-phases:hover .ig-phase {
     flex: 0.6;
   }
-  /* ...mas a imagem específica que está sob o mouse expande lindamente */
   .ig-case-phases .ig-phase:hover {
     flex: 2.5;
   }
@@ -619,7 +665,6 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* 4. Labels Modernos (Estilo Badge flutuante com desfoque) */
 .ig-phase-label {
   position: absolute;
   left: 8px;
@@ -652,7 +697,6 @@ body {
   line-height: 1.5;
 }
 
-/* 5. Ajuste do Overlay de "Ver mais" */
 .ig-overlay {
   position: static;
   display: block;
@@ -675,7 +719,7 @@ body {
 }
 
 /* ==========================================================================
-   14. ABOUT
+   15. ABOUT
    ========================================================================== */
 .about { padding-block: var(--space-9); background: var(--color-concrete); }
 .about-grid {
@@ -701,7 +745,7 @@ body {
 .about-facts dd { font-weight: 600; color: var(--color-navy); }
 
 /* ==========================================================================
-   15. FAQ
+   16. FAQ
    ========================================================================== */
 .faq { padding-block: var(--space-9); }
 .faq-list { max-width: 800px; }
@@ -734,7 +778,7 @@ body {
 .faq-answer { color: var(--color-steel); margin-top: var(--space-3); max-width: 65ch; }
 
 /* ==========================================================================
-   16. CONTACT
+   17. CONTACT
    ========================================================================== */
 .contact { padding-block: var(--space-9); background: var(--color-concrete); }
 .contact-grid {
@@ -762,7 +806,7 @@ body {
 .map-embed iframe { width: 100%; height: 100%; border: 0; }
 
 /* ==========================================================================
-   17. FINAL CTA
+   18. FINAL CTA
    ========================================================================== */
 .final-cta {
   position: relative;
@@ -784,7 +828,7 @@ body {
 .final-cta-text { color: rgba(255,255,255,0.65); margin-bottom: var(--space-6); }
 
 /* ==========================================================================
-   18. FOOTER
+   19. FOOTER
    ========================================================================== */
 .site-footer { background: var(--color-navy); padding-top: var(--space-8); }
 .footer-grid {
@@ -813,7 +857,7 @@ body {
 .footer-legal { font-family: var(--font-mono); }
 
 /* ==========================================================================
-   19. WHATSAPP FLOAT
+   20. WHATSAPP FLOAT
    ========================================================================== */
 .whatsapp-float {
   position: fixed;
@@ -834,7 +878,7 @@ body {
 .whatsapp-float svg { width: 28px; height: 28px; }
 
 /* ==========================================================================
-   20. LGPD MODAL
+   21. LGPD MODAL
    ========================================================================== */
 .lgpd-modal {
   position: fixed;
@@ -889,14 +933,13 @@ body {
 }
 
 /* ==========================================================================
-   21. RESPONSIVE
+   22. RESPONSIVE
    ========================================================================== */
 @media (min-width: 600px) {
   .quick-diffs-grid { grid-template-columns: repeat(4, 1fr); }
   .problem-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
   .diffs-grid { grid-template-columns: repeat(2, 1fr); }
-  /* A regra do ig-grid foi movida para a seção do Portfolio (Acordeão) */
 }
 
 @media (max-width: 767px) {
