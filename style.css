@@ -71,7 +71,7 @@ body, h1, h2, h3, p, figure, ul, ol, dl, dd {
   margin: 0;
 }
 ul, ol { padding: 0; list-style: none; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 input, textarea { font: inherit; }
@@ -517,63 +517,161 @@ body {
 .diff-card p { color: rgba(255,255,255,0.65); font-size: var(--text-sm); }
 
 /* ==========================================================================
-   13. PORTFOLIO / INSTAGRAM
+   13. PORTFOLIO / INSTAGRAM (ACORDEÃO DINÂMICO)
    ========================================================================== */
 .portfolio { padding-block: var(--space-9); }
+
 .ig-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
   margin-bottom: var(--space-2);
 }
+
+/* 1. Grid Principal: Máximo de 2 colunas para as fotos respirarem */
+@media (min-width: 600px) {
+  .ig-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+@media (min-width: 1024px) {
+  .ig-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: var(--space-6);
+  }
+}
+
+/* Card padrão */
 .ig-card {
-  position: relative;              /* para posicionar o overlay */
-  aspect-ratio: 1 / 1;
-  background: var(--color-concrete);
+  position: relative;
+  background: var(--color-white);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  display: block;
   overflow: hidden;
   padding: 0;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 .ig-card:hover {
   border-color: var(--color-brick);
+  box-shadow: var(--shadow-md);
 }
-.ig-card img {
+
+/* Imagem única (caso haja cards simples) */
+.ig-card > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.25s ease;
-}
-.ig-card:hover img {
-  transform: scale(1.03);
+  aspect-ratio: 1 / 1;
 }
 
-/* Overlay com descritivo */
-.ig-overlay {
-  position: absolute;
-  inset: 0;
+/* ==========================================================================
+   13.1 CARDS DE CASO (antes/durante/depois)
+   ========================================================================== */
+.ig-card--case {
   display: flex;
-  align-items: flex-end;          /* texto na parte inferior */
-  padding: var(--space-4);
-  background: linear-gradient(to top, rgba(13, 24, 38, 0.85), rgba(13, 24, 38, 0.2));
-  color: #fff;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  line-height: 1.4;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;            /* não bloqueia o clique no link */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+
+.ig-case-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-navy);
+  padding: var(--space-4) var(--space-4) var(--space-2);
+  margin: 0;
+}
+
+/* 2. O container das Fases: Proporção cinematográfica e layout flexível */
+.ig-case-phases {
+  display: flex;
+  gap: 2px;
+  aspect-ratio: 16 / 10;
+  background: var(--color-line);
   overflow: hidden;
 }
+
+/* 3. Efeito Acordeão: As fotos dividem o espaço e reagem ao mouse */
+.ig-phase {
+  position: relative;
+  flex: 1; 
+  overflow: hidden;
+  aspect-ratio: unset; 
+  transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Quando passa o mouse no container, as imagens encolhem um pouco... */
+@media (hover: hover) {
+  .ig-case-phases:hover .ig-phase {
+    flex: 0.6;
+  }
+  /* ...mas a imagem específica que está sob o mouse expande lindamente */
+  .ig-case-phases .ig-phase:hover {
+    flex: 2.5;
+  }
+}
+
+.ig-phase img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* 4. Labels Modernos (Estilo Badge flutuante com desfoque) */
+.ig-phase-label {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(22, 40, 61, 0.65); 
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ig-phase:hover .ig-phase-label {
+  background: var(--color-brick);
+  transform: translateY(-2px);
+}
+
+.ig-case-description {
+  font-size: var(--text-sm);
+  color: var(--color-steel);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 5. Ajuste do Overlay de "Ver mais" */
+.ig-overlay {
+  position: static;
+  display: block;
+  text-align: center;
+  background: var(--color-concrete);
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-3);
+  opacity: 1; 
+  border-top: 1px solid var(--color-line);
+  pointer-events: auto;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
 .ig-card:hover .ig-overlay,
 .ig-card:focus-visible .ig-overlay {
-  opacity: 1;
+  background: var(--color-brick);
+  color: var(--color-white);
 }
 
 /* ==========================================================================
@@ -798,7 +896,7 @@ body {
   .problem-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
   .diffs-grid { grid-template-columns: repeat(2, 1fr); }
-  .ig-grid { grid-template-columns: repeat(4, 1fr); }
+  /* A regra do ig-grid foi movida para a seção do Portfolio (Acordeão) */
 }
 
 @media (max-width: 767px) {

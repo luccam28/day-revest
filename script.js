@@ -143,6 +143,8 @@
   // ==========================================================================
   // ROLAGEM SUAVE (fallback para navegadores antigos)
   // ==========================================================================
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (event) {
       const targetId = this.getAttribute('href');
@@ -150,15 +152,16 @@
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         event.preventDefault();
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetElement.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: 'start'
+        });
       }
     });
   });
 
   // ==========================================================================
   // TRACKING DE MICROCONVERSÕES (MarTech)
-  // Estrutura pronta para GA4/GTM — nenhum ID foi inventado.
-  // Substitua pela chamada real, ex: gtag('event', eventName, params)
   // ==========================================================================
   function trackEvent(eventName, params) {
     if (typeof window.gtag === 'function') {
